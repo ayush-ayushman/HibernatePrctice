@@ -17,7 +17,7 @@ public class App {
 		org.hibernate.Transaction tx=session.beginTransaction();
 		String s="select * from Produce";
 		NativeQuery q=session.createSQLQuery(s);
-		List<Object[]> pro=q.list();
+		List<Object[]> pro=q.getResultList();
 		for(Object[] p:pro)
 		{
 			System.out.println(p[2]);

@@ -17,8 +17,9 @@ public class App {
      SessionFactory factory=cfg.buildSessionFactory();
      Session session=factory.openSession();
      Transaction  tx= session.beginTransaction();
-     Query q=session.createQuery("update Product   set productcode=:x where pname=:y");
-     q.setParameter("x", "k11");
+    // Query q=session.createQuery("update Product p  set p.productcode=:x where p.pname=:y");
+     Query q=session.createQuery("delete from  Product p  where p.pname=:y");
+    // q.setParameter("x", "k11");
      q.setParameter("y","jeans" );
      int r=q.executeUpdate();
     System.out.println(r);
